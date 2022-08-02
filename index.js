@@ -25,7 +25,11 @@ const exec = util.promisify(e);
   while (games.length) {
     await Promise.all(
       games.splice(0, 1).map((g) => {
-        const cmd = `gcalcli --cal=Inter add --title="${g.homeTeamName} X ${g.visitorTeamName}" --where="${g.homeTeam}" --when="${g.dateISO}" --duration="105" --description="${g.gameId}" --reminder 10`;
+        const cmd = `gcalcli --cal=Inter add --title="${g.homeTeamName} x ${
+          g.visitorTeamName
+        }" --where="${g.stadium || g.homeTeam}" --when="${
+          g.dateISO
+        }" --duration="120" --description="${g.gameId}" --reminder 10`;
         console.log(g.id, "started", cmd);
         return exec(cmd).then(() => console.log(g.id, "done"));
       })
