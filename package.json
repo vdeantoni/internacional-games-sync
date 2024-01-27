@@ -6,8 +6,8 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "date-fns": "^2.29.1",
+    "date-fns": "^3.3.1",
     "lodash": "^4.17.21",
-    "prettier": "^2.7.1"
+    "prettier": "^3.2.4"
   }
 }
